@@ -1,4 +1,4 @@
-package rajeeSanTask;
+package rajeeSanTask.copy;
 
 import java.util.Scanner;
 

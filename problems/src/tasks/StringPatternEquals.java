@@ -14,9 +14,6 @@ public class StringPatternEquals {
 	private void getInput() {
 		String s1 = input.nextLine();
 		String s2 = input.nextLine();
-		char c[] = {'a','b','c'};
-		String s = new String(c);
-		System.out.println(s);
 		System.out.println((isEqual(s1, s2)) ? "yes" : "No");
 	}
 
