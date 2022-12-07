@@ -23,7 +23,43 @@ public class CommonPrefix {
 				index = i;
 			}
 		}
-		System.out.println(findCommonPrefix(array, index, min) + " - is the common prefix substring");
+		int lastIndex = findCommonPrefixes(array, index, min);
+		if (lastIndex != 0) {
+			char[] str = array[index].toCharArray();
+			for (int i = 0; i < lastIndex; i++) {
+				System.out.print(str[i]);
+			}
+		}
+//		System.out.println(findCommonPrefix(array, index, min) + " - is the common prefix substring");
+	}
+
+	private int findCommonPrefixes(String[] array, int index, int min) {
+		String str = array[index];
+		str += "*";
+		char[] minArray = str.toCharArray(), newArray;
+		int len2, index2 = 0, len = getSize(minArray);
+		for (int i = 0; i < len; i++) {
+			char value = minArray[i];
+			for (String string : array) {
+				string += "*";
+				newArray = string.toCharArray();
+				len2 = getSize(newArray);
+				if (index2 == len2 && newArray[index2] != value) {
+					return i;
+				}
+			}
+			index2++;
+		}
+		return len;
+	}
+
+	private int getSize(char[] array) {
+		int len = 0, i = 0;
+		while (array[i] != '*') {
+			len++;
+			i++;
+		}
+		return len;
 	}
 
 	private String findCommonPrefix(String[] array, int index, int len) {
