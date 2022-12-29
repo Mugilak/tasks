@@ -20,11 +20,11 @@ public class StringReverse {
 	private void reverseAsString(char[] array, int length) {
 		String reverse = "";
 		int j = length - 1;
-		for (int i = 0; i < length && j >= 0; ) {
+		for (int i = 0; i < length;) {
 			if ((array[i] >= 97 && array[i] <= 122) || (array[i] >= 48 && array[i] <= 57)
 					|| (array[i] >= 65 && array[i] <= 90)) {
-				if ((array[j] >= 97 && array[j] <= 122) || (array[j] >= 48 && array[j] <= 57)
-						|| (array[j] >= 65 && array[j] <= 90)) {
+				if (j >= 0 && ((array[j] >= 97 && array[j] <= 122) || (array[j] >= 48 && array[j] <= 57)
+						|| (array[j] >= 65 && array[j] <= 90))) {
 					reverse += array[j];
 					i++;
 				}

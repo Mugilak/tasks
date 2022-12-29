@@ -7,7 +7,7 @@ public class PrintingNumbers {
 	}
 
 	private void getInput() {
-		int n = 90;
+		int n = 100;
 		System.out.println(getWord(n));
 	}
 
@@ -33,6 +33,9 @@ public class PrintingNumbers {
 			}
 			temp /= 10;
 			i++;
+		}
+		if (n == 100) {
+			return "Hundred";
 		}
 		return ans;
 	}

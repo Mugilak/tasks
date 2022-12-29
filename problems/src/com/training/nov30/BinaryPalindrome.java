@@ -16,11 +16,11 @@ public class BinaryPalindrome {
 	}
 
 	private void findBinary(int n) {
-		int binary = 0, reverse = 0, digit, i = 1;
+		int binary = 0, reverse = 0, digit = 0, i = 1;
 		while (n > 0) {
 			digit = n % 2;
-			binary = binary * 10 + digit;
-			reverse = digit * i + reverse;
+			reverse = reverse * 10 + digit;
+			binary = digit * i + binary;
 			i *= 10;
 			n /= 2;
 		}

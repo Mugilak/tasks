@@ -10,22 +10,35 @@ public class AlphabetsSeries {
 	}
 
 	private void getInput() {
+		System.out.println("Enter String : ");
+		String s = input.nextLine();
+		findNumber(s);
 		System.out.println("Enter num : ");
 		int num = input.nextInt();
-		findSequence(num);
+		String ans = findSequence(num);
+		System.out.println(ans);
 	}
 
-	private void findSequence(int num) {
+	private void findNumber(String s) {
+		long number = 0, k = 0;
+		for (int i = s.length() - 1; i >= 0; i--) {
+			number += ((s.charAt(i) - 96) * (long) Math.pow(26, k));
+			k++;
+		}
+		System.out.println(number);
+	}
+
+	private String findSequence(int num) {
 		if (num <= 0) {
-			System.out.println("invalid");
-			return;
+			return "Invalid";
 		}
 		if (num <= 26) {
-			System.out.println((char) (num % 26 + 96));
-		} else {
-			String answer = ((char) (num / 26 + 96)) + "" + ((char) (num % 26 + 96));
-			System.out.println(answer);
+			return ((char) ((num) + 96)) + "";
 		}
+		if (num % 26 == 0)
+			return findSequence(--num / 26) + 'z' + "";
+		else
+			return findSequence(--num / 26) + ((char) ((++num % 26) + 96)) + "";
 	}
 
 }

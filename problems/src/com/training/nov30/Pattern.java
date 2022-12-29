@@ -16,9 +16,9 @@ public class Pattern {
 	}
 
 	private void print(int n) {
-		int value = 1, v = 1, t = 6;
+		int value = 1, v = 1, t = n;
 		for (int i = 0; i < n; i++) {
-			t = 6;
+			t = n;
 			for (int j = 0; j < n - i; j++) {
 				if (j == 0) {
 					System.out.print(value + " ");
